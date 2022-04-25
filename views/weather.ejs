@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./images/weather.ico" type="image/x-icon">
+    <title>Weather App | Weather</title>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs',{status1:status1,status2:status2,status3:status3})%>
+    <div class="container-fluid main_header mt-4" >
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+                <div class="main_content">
+                    <form class="temp_form">
+                        <input type="text" id="cityName" placeholder="Enter your city name" autocomplete="off">
+                        <input type="submit" value="search" id="submitBtn">
+                    </form>
+
+                    <div class="tempInformation">
+                        <div class="top_layer">
+                            <p id="day">Saturday</p>
+                            <p id="today_data">13 OCT</p>
+                        </div>
+
+                        <div class="main_layer">
+                            <p id="city_name">city</p>
+                            <div class="middle_layer data_hide">
+                                <p id="temp"><span id="temp_real_val">0</span><sup>o</sup>C</p>
+                                <p id="temp_status"><i class="fa fa-cloud" aria-hidden="true"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div>
+        <div>
+    <div>
+    <!-- <footer class="mt-auto">
+        <p>&copy; 2022 Design Darshan Inc. Made with ❤ in India</p>
+    </footer> -->
+    <script src="https://kit.fontawesome.com/e0fff8852c.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script>
+
+        const day = document.getElementById('day')
+        const getCurrentDay = ()=>{
+            let weekday = new Array(7)
+            weekday[0] = 'Sunday'
+            weekday[1] = 'Monday'
+            weekday[2] = 'Tuesday'
+            weekday[3] = 'Wed'
+            weekday[4] = 'Thursday'
+            weekday[5] = 'Friday'
+            weekday[6] = 'Saturday'
+
+            let currentTime = new Date()
+            let days = weekday[currentTime.getDay()]
+
+            day.innerText = days;
+
+        }
+
+        const getCurrentTime = () =>{
+            let months = [
+                'Jan',
+                'Feb',
+                'Mar',
+                'Apr',
+                'May',
+                'Jun',
+                'Jul',
+                'Aug',
+                'Sep',
+                'Oct',
+                'Nov',
+                'Dec'
+            ]
+
+            let date = new Date()
+            let today_data = document.getElementById('today_data')
+
+            let currentDate = date.getDate() + ' ' + months[date.getMonth()]
+
+            today_data.innerText = currentDate
+        } 
+
+        getCurrentDay()
+        getCurrentTime()
+
+
+    </script>
+</body>
+</html>
